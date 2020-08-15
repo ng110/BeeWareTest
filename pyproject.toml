@@ -1,0 +1,83 @@
+[tool.briefcase]
+project_name = "NG BeeWare Test"
+bundle = "org.uk.neilgriffin"
+version = "0.0.1"
+url = "https://neilgriffin.uk.org/ng-beeware-test"
+license = "BSD license"
+author = 'Neil Griffin'
+author_email = "ngriffin110@gmail.com"
+
+[tool.briefcase.app.ng-beeware-test1]
+formal_name = "NG BeeWare Test 1"
+description = "First app to test out using beeware stuff."
+icon = "src/ng_beeware_test1/resources/ng-beeware-test"
+sources = ['src/ng_beeware_test1']
+requires = []
+
+
+[tool.briefcase.app.ng-beeware-test1.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.ng-beeware-test1.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev20',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.ng-beeware-test1.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev20',
+]
+
+# Mobile deployments
+[tool.briefcase.app.ng-beeware-test1.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.ng-beeware-test1.android]
+requires = [
+    'toga-android>=0.3.0.dev20',
+]
+
+
+
+
+[tool.briefcase.app.ng-beeware-test2]
+formal_name = "NG BeeWare Test 2"
+description = "Second app to test out using beeware stuff."
+icon = "src/ng_beeware_test2/resources/ng-beeware-test"
+sources = ['src/ng_beeware_test2']
+requires = []
+
+
+
+[tool.briefcase.app.ng-beeware-test2.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev20',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.ng-beeware-test2.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.ng-beeware-test2.android]
+requires = [
+    'toga-android>=0.3.0.dev20',
+]
