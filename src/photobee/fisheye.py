@@ -2,12 +2,11 @@
 based on fisheye.py from https://github.com/scikit-image/skimage-demos
 """
 
-from skimage import transform, data
+from skimage import transform
 import numpy as np
-import matplotlib.pyplot as plt
-from math import pi, sqrt
+from math import sqrt
 from PIL import Image
-import cProfile
+
 
 def fishwarp(image, level=1):
 #    print('fw', level, type(image), flush=True)
@@ -45,6 +44,7 @@ def fishwarp(image, level=1):
         return np.column_stack((r*np.cos(theta), r*np.sin(theta))) + centre
     return(transform.warp(image, fisheye, map_args={}, order=3, preserve_range=False))
 
+
 def fishwarppil(image, level=1):
     print('zz', image.getextrema(), flush=True)
     nim = np.array(image)
@@ -54,22 +54,3 @@ def fishwarppil(image, level=1):
     nim = fishwarp(nim, level)
     print('xx', Image.fromarray(np.uint8(nim*255)).getextrema(), flush=True)
     return(Image.fromarray(np.uint8(nim*255)))
-
-def run():
-    image = data.astronaut()
-    # out = fishwarp(image, 2)
-    # f, (ax0, ax1) = plt.subplots(1, 2, subplot_kw=dict(xticks=[], yticks=[]))
-    # ax0.imshow(image)
-    # ax1.imshow(out)
-    # plt.show()
-    pim = Image.fromarray(image)
-    pout = fishwarppil(pim, -10)
-    out = np.array(pout)
-    f, (ax0, ax1) = plt.subplots(1, 2, subplot_kw=dict(xticks=[], yticks=[]))
-    ax0.imshow(image)
-    ax1.imshow(out)
-    plt.show()
-
-if __name__ == '__main__':
-#     cProfile.run('run()', sort='cumtime')
-    run()

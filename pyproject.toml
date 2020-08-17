@@ -89,7 +89,7 @@ description = "Sort and edit photos"
 icon = "src/photobee/resources/photobee"
 sources = ['src/photobee']
 requires = [
-    'pyside2==5.13.0',
+    'pyside2',
     'piexif',
     'exifread',
     'pillow',
