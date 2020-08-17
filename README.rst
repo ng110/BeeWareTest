@@ -9,6 +9,20 @@ An `introductory video can be found here`_.
 
 This is a project to test out using BeeWare stuff.  I'll add a few apps as I go along.
 
+briefcase new     ...set up project template. can then edit folders and pyproject.toml
+briefcase dev     ...run from source??  pip installs dependencies then runs app with local python 
+briefcase create  ...makes application template folder. incl downloads platform support package (incl python), and dependencies into template
+briefcase build   ...maybe some compilation. folder now has a runable application
+briefcase run --app ng-beeware-test1
+briefcase package ...makes installer
+briefcase update [-d to update dependencies] [-r to update resources] ... after editing application
+briefcase create/build [platform]  ...create different platform (can't do foreign desktop (or iOS if not on mac), but can do android anywhere
+
+briefcase run will automatically do create and build if they haven't been done [with -u, will update before execution]
+briefcase --help give options
+briefcase run android -d @beePhone to run on android emulator called 'beePhone'
+
+c:\Users\neil.griffin\.briefcase\tools\android_sdk\emulator\emulator.exe @beePhone -dns-server 8.8.8.8
 
 
 .. _`Briefcase`: https://github.com/beeware/briefcase

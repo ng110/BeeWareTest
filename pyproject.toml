@@ -3,17 +3,18 @@ project_name = "NG BeeWare Test"
 bundle = "org.uk.neilgriffin"
 version = "0.0.1"
 url = "https://neilgriffin.uk.org/ng-beeware-test"
-license = "BSD license"
+license = "Proprietary"
 author = 'Neil Griffin'
 author_email = "ngriffin110@gmail.com"
+
+
 
 [tool.briefcase.app.ng-beeware-test1]
 formal_name = "NG BeeWare Test 1"
 description = "First app to test out using beeware stuff."
-icon = "src/ng_beeware_test1/resources/ng-beeware-test"
+icon = "src/ng_beeware_test1/resources/ng-beeware-test1"
 sources = ['src/ng_beeware_test1']
 requires = []
-
 
 [tool.briefcase.app.ng-beeware-test1.macOS]
 requires = [
@@ -37,7 +38,6 @@ requires = [
     'toga-winforms>=0.3.0.dev20',
 ]
 
-# Mobile deployments
 [tool.briefcase.app.ng-beeware-test1.iOS]
 requires = [
     'toga-iOS>=0.3.0.dev20',
@@ -54,11 +54,9 @@ requires = [
 [tool.briefcase.app.ng-beeware-test2]
 formal_name = "NG BeeWare Test 2"
 description = "Second app to test out using beeware stuff."
-icon = "src/ng_beeware_test2/resources/ng-beeware-test"
+icon = "src/ng_beeware_test2/resources/ng-beeware-test2"
 sources = ['src/ng_beeware_test2']
 requires = []
-
-
 
 [tool.briefcase.app.ng-beeware-test2.linux]
 requires = [
@@ -81,3 +79,37 @@ requires = [
 requires = [
     'toga-android>=0.3.0.dev20',
 ]
+
+
+
+
+[tool.briefcase.app.photobee]
+formal_name = "PhotoBee"
+description = "Sort and edit photos"
+icon = "src/photobee/resources/photobee"
+sources = ['src/photobee']
+requires = [
+    'pyside2==5.13.0',
+    'piexif',
+    'exifread',
+    'pillow',
+    'scikit-image',
+    ]
+
+
+[tool.briefcase.app.photobee.macOS]
+requires = []
+
+[tool.briefcase.app.photobee.linux]
+requires = []
+system_requires = []
+
+[tool.briefcase.app.photobee.windows]
+requires = []
+
+# Mobile deployments
+[tool.briefcase.app.photobee.iOS]
+requires = []
+
+[tool.briefcase.app.photobee.android]
+requires = []
